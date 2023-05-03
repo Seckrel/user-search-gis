@@ -11,5 +11,5 @@ class UserHomeOfficeGap(models.Model):
         verbose_name = _("User Home Office Gap")
         verbose_name_plural = _("Users Home Office Gap")
         
-    def __str__(self) -> str:
-        return _(f"{self.user.user.username}'s Home to Office")
+    def __str__(self) :
+        return self.user.user.username

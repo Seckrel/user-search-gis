@@ -139,3 +139,14 @@ MEDIA_ROOT='media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Leaflet config
+LEAFLET_CONFIG = {
+    'DEFAULT_CENTER': (0, 0),
+    'DEFAULT_ZOOM': 2,
+    'MIN_ZOOM': 2,
+    'MAX_ZOOM': 18,
+    'SCALE': 'both',
+    'TILES': 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    'ATTRIBUTION_PREFIX': 'Powered by <a href="https://leafletjs.com/" target="_blank">Leaflet</a>,',
+}
