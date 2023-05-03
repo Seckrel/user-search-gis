@@ -44,9 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'leaflet',
+    'rest_framework',
     # Custom apps
     'user',
-    'hometoofficelinevector'
+    'hometoofficelinevector',
+    'api',
 ]
 
 MIDDLEWARE = [
