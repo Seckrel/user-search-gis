@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     'leaflet',
     # Custom apps
-    'user'
+    'user',
+    'hometoofficelinevector'
 ]
 
 MIDDLEWARE = [
