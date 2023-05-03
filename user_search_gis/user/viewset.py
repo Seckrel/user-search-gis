@@ -24,10 +24,8 @@ class RegisterUser(GenericViewSet, CreateModelMixin):
             
             serializer = self.serializer_class(data=request.data)
             if serializer.is_valid():
-                print("here", serializer.validated_data["username"])
                 user = serializer.save(is_active=False)
                 user.set_password = serializer.validated_data["password"]
-                # user.set_username = serializer.validated_data["username"]
                 user.save()
                 return Response({"message": "User Created Successfully"}, status=status.HTTP_201_CREATED)
             else:
@@ -53,7 +51,7 @@ class UserSignIn(APIView):
        if not user.is_active:
            return Response({"message": "Unverified account. Check your email to verify this account"}, status=400)
        
-       token, created = Token.objects.get_or_create(user=user)
+       token, created = Token.object.get_or_create(user=user)
        return Response({
            "token": token.key,
            'user_id': user.pk,
