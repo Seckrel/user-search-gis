@@ -51,7 +51,7 @@ class UserSignIn(APIView):
        if not user.is_active:
            return Response({"message": "Unverified account. Check your email to verify this account"}, status=400)
        
-       token, created = Token.object.get_or_create(user=user)
+       token, created = Token.objects.get_or_create(user=user)
        return Response({
            "token": token.key,
            'user_id': user.pk,

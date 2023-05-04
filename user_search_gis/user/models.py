@@ -28,17 +28,17 @@ class UserProfile(models.Model):
 
     first_name = models.CharField(max_length=55, blank=False, null=False)
     middle_name = models.CharField(max_length=55, blank=True, null=True)
-    last_name = models.CharField(max_length=55, blank=False, null=False)
+    last_name = models.CharField(max_length=55, blank=True, null=True)
     gender = models.CharField(max_length=15, default="Male",
                               choices=GENDER_CHOICES)
-    country = models.CharField(max_length=100, blank=False, null=False)
-    email = models.CharField(max_length=64)
+    country = models.CharField(max_length=100, blank=True, null=True)
+    email = models.CharField(max_length=64, blank=False, null=False)
     phone = models.CharField(max_length=64, blank=True, null=True)
     birthday = models.DateField(null=True, blank=True)
-    interests = models.ManyToManyField(to=Interest, related_name="user_interest")
+    interests = models.ManyToManyField(to=Interest, related_name="user_interest", blank=True, null=True)
     document = models.FileField(upload_to=get_upload_path, null=True, blank=True)
-    home_address = models.PointField(srid=4326)
-    office_address = models.PointField(srid=4326)
+    home_address = models.PointField(srid=4326, null=True, blank=True)
+    office_address = models.PointField(srid=4326, null=True, blank=True)
     date_created = models.DateTimeField(
         auto_now_add=True, blank=True, null=True)
     date_modified = models.DateTimeField(auto_now=True, blank=True, null=True)
@@ -47,11 +47,11 @@ class UserProfile(models.Model):
     
 
     class Meta:
-        verbose_name = _("")
+        verbose_name = _("User Profile")
         verbose_name_plural = _("User Profiles")
 
     def __str__(self):
-        return self.user.username
+        return str(self.user.username)
     
 
     

@@ -5,11 +5,11 @@ from user.models import UserProfile
 
 class UserHomeOfficeGap(models.Model):
     user = models.OneToOneField(to=UserProfile, on_delete=models.CASCADE, related_name="user_userhomeoffice")
-    home_off_gap = models.LineStringField(verbose_name="Line Vector from home to office")
+    home_off_gap = models.LineStringField(verbose_name="Line Vector from home to office", null=True, blank=True)
     
     class Meta:
         verbose_name = _("User Home Office Gap")
         verbose_name_plural = _("Users Home Office Gap")
         
-    def __str__(self) :
-        return self.user.user.username
+    def __str__(self):
+        return str(self.user.user.username)
