@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'leaflet',
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_gis',
+    'django_celery_results',
     # Custom apps
     'user',
     'hometoofficelinevector',
@@ -162,3 +164,5 @@ LEAFLET_CONFIG = {
     'TILES': 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     'ATTRIBUTION_PREFIX': 'Powered by <a href="https://leafletjs.com/" target="_blank">Leaflet</a>,',
 }
+
+CELERY_RESULT_BACKEND = 'django-db' 
