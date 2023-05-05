@@ -235,6 +235,17 @@ yarn-error.log*
 # vercel
 .vercel
 
+
+# Created by https://www.toptal.com/developers/gitignore/api/redis
+# Edit at https://www.toptal.com/developers/gitignore?templates=redis
+
+### Redis ###
+# Ignore redis binary dump (dump.rdb) files
+
+*.rdb
+
+# End of https://www.toptal.com/developers/gitignore/api/redis
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
@@ -514,6 +525,7 @@ pip-selfcheck.json
 
 # and uncomment the following lines
 # .pnp.*
+
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,Node,nextjs,yarn,python,venv,django,vite
 n
