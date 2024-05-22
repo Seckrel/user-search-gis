@@ -11,7 +11,7 @@
 - Return geoJSON of line vector from user's home address to office address
 - Wishes users Happy birthday on their birthday automatically
 
-## Setting up
+## 🚀Setting up
 
 ```
 python -m venv venv
@@ -26,7 +26,7 @@ source ./venv/Script/activate
 pip install -r requirements.txt
 ```
 
-## Run
+## 🏁Run
 
 ```
 python manage.py runserver
